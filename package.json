@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Next Market - Ecommerce Web With ReactJS",
   "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sotengboy/nextmarket.git"
