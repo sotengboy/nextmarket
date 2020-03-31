@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sotengboy/nextmarket#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "next": "^9.3.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
