@@ -1,8 +1,14 @@
+import { useState } from "react";
 import Header from '../components/header';
-const Index = () => (
-    <div>
-      <Header/>
-    </div>
-  );
+import Searchbar from '../components/searchbar';
+const Index = () => {
+   
+      return (
+        <div>
+            <Header/>
+            <Searchbar/>
+        </div>
+      );
+};
   
  export default Index;
