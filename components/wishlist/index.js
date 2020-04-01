@@ -1,15 +1,13 @@
 import { connect } from "react-redux";
-import WishlistItem from "./item";
-import Button from "../buttons/default";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
-import styles from "../layout/html/header.module.css";
+import WishlistItem from "./item";
 
-const WishlistPopup = ({ wishlist }) => {
+const WishlistModal = ({ wishlist }) => {
     let content = "";
     let qtyWishlist = 0;
     
-    const [show, setShow] = useState(false);
+    const [modalShow, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -51,11 +49,10 @@ const WishlistPopup = ({ wishlist }) => {
     return (
         <>
             <a
-                className={styles.navLink}
-                onClick={() => handleShow()}
-            >{`WISHLIST(${qtyWishlist})`}</a>
+                onClick={handleShow}
+            >{`Wishlist (${qtyWishlist})`}</a>
             <Modal
-                show={show}
+                show={modalShow}
                 onHide={handleClose}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
@@ -74,4 +71,4 @@ const mapStateToProps = state => ({
     wishlist: state.wishlist
 });
 
-export default connect(mapStateToProps, null)(WishlistPopup);
+export default connect(mapStateToProps, null)(WishlistModal);

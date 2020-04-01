@@ -1,12 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
-import AddToCart from '../../components/buttons/addToCart';
-import AddToWishlist from '../../components/buttons/addToWishlist';
-import Layout from "../../components/layout/1column";
 import { useRouter } from "next/router";
 import { connect } from 'react-redux';
-import Price from '../../components/catalog/price';
 import { Tabs, Tab } from 'react-bootstrap';
+import AddToCart from '../../components/buttons/addToCart';
+import AddToWishlist from '../../components/buttons/addToWishlist';
+import Layout from "../../components/layout/column";
 
 function ProductContent({catalog}) {
     const router = useRouter();

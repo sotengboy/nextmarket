@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core";
-import Filter from "../pages/products/filter";
+import Filter from "./products/filter";
 
 const Searchbar = ({ keyword, handleSearch }) => {
   const _handleSearch = e => {

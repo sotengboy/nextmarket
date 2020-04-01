@@ -2,10 +2,10 @@
 import {css, jsx} from "@emotion/core";
 import { connect } from "react-redux";
 import Link from "next/link";
-import { VisibilityFilters, getFilter } from "../../components/redux/actions/catalogFilterAction";
-import AddToCart from "../../components/buttons/addToCart";
-import AddToWishlist from "../../components/buttons/addToWishlist";
-import DetailProduct from "../../components/buttons/detailProduct";
+import { VisibilityFilters, getFilter } from "../redux/actions/catalogFilterAction";
+import AddToCart from "../buttons/addToCart";
+import AddToWishlist from "../buttons/addToWishlist";
+import DetailProduct from "../buttons/detailProduct";
 const ProductList = ({ catalog, _getFilter,keyword }) => {
 
     const products = catalog.filter(function(product) {

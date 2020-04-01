@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core";
 import { connect } from "react-redux";
-import { setFilter } from "../../components/redux/actions/catalogFilterAction";
+import { setFilter } from "../redux/actions/catalogFilterAction";
 
 const Filter = ({filter, setFilter}) => {
     const _handleChange = (e) => {

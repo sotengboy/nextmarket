@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Layout from '../components/layout/column';
-import Header from "../components/header"
 import Searchbar from '../components/searchbar';
-import ProductList from '../pages/products/productlist';
+import ProductList from '../components/products/productlist';
 
 const Catalog = () => {
   const [keyword, setKeyword] = useState("");
@@ -12,7 +11,7 @@ const Catalog = () => {
   }
       return (
         <div >
-            <Header />
+            
             <Searchbar keyword={keyword} handleSearch={handleSearch} />
             <ProductList keyword={keyword} />
         </div>

@@ -1,12 +1,26 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core";
+import { connect } from "react-redux";
+import Link from "next/link";
+import WishlistModal from "./wishlist";
 
-const Header = () => (
+function Header({cart, wishlist}) {
+  let qtyCart = 0;
+    let qtyWishlist = 0;
+    cart.map(function(item) {
+        qtyCart += item.qty;
+    });
+    return (
     <div css={styles.Heads}>
       <div css={styles.Logo}>NEXT MARKET <img src="/assets/images/store.png" alt="logo" css={styles.Image} /></div>
-      <div css={styles.Cart}>Cart () Wishlist ()</div>
+      <div css={styles.Cart}><Link href="/cart"><a>{`Cart (${qtyCart})`}</a></Link> <WishlistModal/></div>
     </div>
-  );
+    )
+    };
+    const mapStateToProps = (state) => ({
+      cart: state.cart,
+      wishlist: state.wishlist
+  })
   const styles = {
     Heads: css`
       display: flex;
@@ -16,6 +30,7 @@ const Header = () => (
       text-align: left;
       float: left;
       background: #33A2FF;
+      flex-wrap: wrap;
     `,
     Logo: css`
       height: 64px;
@@ -39,4 +54,4 @@ const Header = () => (
       margin-left: 10px;
     `
   }
-  export default Header;
+  export default connect(mapStateToProps, null)(Header);

@@ -1,6 +1,5 @@
-import Price from "../catalog/price";
 import Link from "next/link";
-import ViewProductLink from "../buttons/viewProductLink";
+import DetailProduct from "../buttons/detailProduct";
 
 const WishlistItem = ({ item }) => {
     return (
@@ -15,10 +14,10 @@ const WishlistItem = ({ item }) => {
                     </Link>
                 </strong>
                 <p>{item.desc}</p>
-                <ViewProductLink productid={item.id} />
+                <DetailProduct productid={item.id} />
             </td>
             <td className="price">
-                <Price price={item.price} />
+                <p>{item.price}</p>
             </td>
             <td className="qty">{item.qty}</td>
         </tr>
