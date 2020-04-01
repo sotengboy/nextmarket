@@ -1,14 +1,22 @@
 import { useState } from "react";
-import Header from '../components/header';
+import Layout from '../components/layout/column';
+import Header from "../components/header"
 import Searchbar from '../components/searchbar';
-const Index = () => {
-   
+import ProductList from '../pages/products/productlist';
+
+const Catalog = () => {
+  const [keyword, setKeyword] = useState("");
+
+  const handleSearch = (keyword) => {
+      setKeyword(keyword);
+  }
       return (
-        <div>
-            <Header/>
-            <Searchbar/>
+        <div >
+            <Header />
+            <Searchbar keyword={keyword} handleSearch={handleSearch} />
+            <ProductList keyword={keyword} />
         </div>
       );
 };
-  
- export default Index;
+
+ export default Layout(Catalog);
