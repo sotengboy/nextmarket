@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core";
 import { connect } from "react-redux";
-import Link from "next/link";
-import { VisibilityFilters, getFilter } from "../redux/actions/catalogFilterAction";
+import { VisibilityFilters} from "../redux/actions/catalogFilterAction";
 import AddToCart from "../buttons/addToCart";
 import AddToWishlist from "../buttons/addToWishlist";
 import DetailProduct from "../buttons/detailProduct";
-const ProductList = ({ catalog, _getFilter,keyword }) => {
+const ProductList = ({ catalog, keyword }) => {
 
     const products = catalog.filter(function(product) {
         if (keyword !== "") {

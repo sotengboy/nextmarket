@@ -27,7 +27,7 @@ const styles = {
     background: #f46b41;
     color: #fff;
     border: none;
-    width: 100%;
+    width: 150px;
     padding: 10px;
     margin: 10px 5px 5px 5px;
     font-size: 12px;

@@ -1,23 +1,29 @@
-import Price from "../catalog/price";
+/** @jsx jsx */
+import {css, jsx} from "@emotion/core";
 import Link from "next/link";
 
 const CartItem = ({item}) => {
     return (
         <tr>
-            <td className="image">
-                <img src={item.image} alt={item.name} />
+            <td>
+                <img src={item.image} alt={item.title} css={styles.image} />
             </td>
-            <td className="detail">
+            <td>
                 <strong><Link href="/product/[id]"as={`/product/${item.id}`} ><a>{item.name}</a></Link></strong>
-                <p>{item.desc}</p>
+                <p>{item.description}</p>
             </td>
-            <td className="price">
-                <Price price={item.price} />
+            <td >
+                <p>{item.price}</p>
             </td>
-            <td className="qty">{item.qty}</td>
-            <td className="sub-total"><Price price={item.qty * item.price}/></td>
+            <td>{item.qty}</td>
+            <td><p>{item.qty * item.price}</p></td>
         </tr>
     );
 }
-
+const styles = {
+    image: css`
+        width: 200px;
+        height: 200px;
+    `,
+}
 export default CartItem;

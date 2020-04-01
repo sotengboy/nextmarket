@@ -1,19 +1,21 @@
+/** @jsx jsx */
+import {css, jsx} from "@emotion/core";
 import Link from "next/link";
 import DetailProduct from "../buttons/detailProduct";
 
 const WishlistItem = ({ item }) => {
     return (
         <tr>
-            <td className="image">
-                <img src={item.image} alt={item.name} />
+            <td>
+                <img src={item.image} alt={item.title} css={styles.image} />
             </td>
             <td className="detail">
                 <strong>
                     <Link href="/product/[id]" as={`/product/${item.id}`}>
-                        <a>{item.name}</a>
+                        <a>{item.title}</a>
                     </Link>
                 </strong>
-                <p>{item.desc}</p>
+                <p>{item.description}</p>
                 <DetailProduct productid={item.id} />
             </td>
             <td className="price">
@@ -23,5 +25,10 @@ const WishlistItem = ({ item }) => {
         </tr>
     );
 };
-
+const styles = {
+    image: css`
+    width: 200px;
+    height: 200px;
+  `
+}
 export default WishlistItem;

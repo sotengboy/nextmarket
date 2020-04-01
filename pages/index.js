@@ -11,7 +11,6 @@ const Catalog = () => {
   }
       return (
         <div >
-            
             <Searchbar keyword={keyword} handleSearch={handleSearch} />
             <ProductList keyword={keyword} />
         </div>
