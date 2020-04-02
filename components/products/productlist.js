@@ -6,7 +6,21 @@ import AddToCart from "../buttons/addToCart";
 import AddToWishlist from "../buttons/addToWishlist";
 import DetailProduct from "../buttons/detailProduct";
 const ProductList = ({ catalog, keyword }) => {
-
+    function formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
+        try {
+          decimalCount = Math.abs(decimalCount);
+          decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+      
+          const negativeSign = amount < 0 ? "-" : "";
+      
+          let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+          let j = (i.length > 3) ? i.length % 3 : 0;
+      
+          return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+        } catch (e) {
+          console.log(e)
+        }
+    };
     const products = catalog.filter(function(product) {
         if (keyword !== "") {
             const result = product.title
@@ -40,7 +54,7 @@ const ProductList = ({ catalog, keyword }) => {
                                 <span>{product.title}</span>
                             </div>
                             <div css={styles.item_price}>
-                                <p>Rp. {product.price}</p>
+                                <p>Rp. {formatMoney(product.price)}</p>
                             </div>
                             <div css={styles.item_description}>
                                 <p>{product.description}</p>

@@ -11,7 +11,21 @@ function ProductContent({catalog}) {
     const router = useRouter();
     const id = router.query.id;
     const product = catalog.filter((product) => product.id === parseInt(id))[0];
-
+    function formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
+        try {
+          decimalCount = Math.abs(decimalCount);
+          decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+      
+          const negativeSign = amount < 0 ? "-" : "";
+      
+          let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+          let j = (i.length > 3) ? i.length % 3 : 0;
+      
+          return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+        } catch (e) {
+          console.log(e)
+        }
+    };
     return (
         <div css={styles.product}>
             <Link href="/"><a css={styles.back}>{`<<`} Back To Home</a></Link>
@@ -24,7 +38,7 @@ function ProductContent({catalog}) {
                 <div css={styles.right}>
                     <h1>{product.title}</h1>
                     <p css={styles.price}>
-                        Rp. {product.price}
+                        Rp. {formatMoney(product.price)}
                     </p>
                     <div css={styles.description}>
                         <p>{product.description}</p>
