@@ -4,9 +4,8 @@ import { connect } from "react-redux";
 import Link from "next/link";
 import WishlistModal from "./wishlist";
 
-function Header({cart, wishlist}) {
+function Header({cart}) {
   let qtyCart = 0;
-    let qtyWishlist = 0;
     cart.map(function(item) {
         qtyCart += item.qty;
     });
