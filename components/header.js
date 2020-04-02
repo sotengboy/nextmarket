@@ -31,6 +31,7 @@ function Header({cart, wishlist}) {
       float: left;
       background: #33A2FF;
       flex-wrap: wrap;
+      margin-bottom: 20px;
     `,
     Logo: css`
       height: 64px;

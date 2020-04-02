@@ -10,7 +10,7 @@ const Catalog = () => {
       setKeyword(keyword);
   }
       return (
-        <div >
+        <div>
             <Searchbar keyword={keyword} handleSearch={handleSearch} />
             <ProductList keyword={keyword} />
         </div>

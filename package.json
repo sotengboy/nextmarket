@@ -25,6 +25,7 @@
   "homepage": "https://github.com/sotengboy/nextmarket#readme",
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "formik": "^2.1.4",
     "next": "^9.3.3",
     "next-redux-wrapper": "^5.0.0",
     "react": "^16.13.1",
@@ -34,6 +35,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "yup": "^0.28.3"
   }
 }

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core";
 import { connect } from "react-redux";
-import React,{ useState } from "react";
+import React from "react";
 import Modal from 'react-modal';
 import WishlistItem from "./item";
 Modal.setAppElement('#__next');
@@ -65,7 +65,6 @@ const WishlistModal = ({ wishlist }) => {
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
-
           contentLabel="Example Modal"
         >
 

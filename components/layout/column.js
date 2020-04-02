@@ -1,4 +1,5 @@
 import Header from "../header";
+import AddProduct from "../products/addproduct";
 
 const layoutStyle = {
     padding: 20
@@ -10,7 +11,7 @@ const Layout = Page => {
             <main>
                 <Page />
             </main>
-
+            <AddProduct />
         </div>
     );
 }

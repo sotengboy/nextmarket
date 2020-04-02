@@ -40,7 +40,7 @@ const ProductList = ({ catalog, keyword }) => {
                                 <span>{product.title}</span>
                             </div>
                             <div css={styles.item_price}>
-                                <p>{product.price}</p>
+                                <p>Rp. {product.price}</p>
                             </div>
                             <div css={styles.item_description}>
                                 <p>{product.description}</p>
